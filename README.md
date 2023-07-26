@@ -171,6 +171,11 @@ After students join the organization, you will need to gather them into a **team
 10. Assign the `Students` team the default `Read` role/permission.
 11. The students added to the team will now be able to view the `syllabus` repository. For additional repositories, only steps 7 through 11 of this subsection are needed.
 
+### Supplementary Materials
+- https://www.youtube.com/playlist?list=PLIRjfNq867bewk3ZGV6Z7a16YDNRCpK3u
+- https://github.com/jfiksel/github-classroom-for-teachers
+- https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli
+
 ## For Students
 ### Your GitHub account
 - It is recommended to create a GitHub account using your university email or a professional email incorporating your name.
@@ -190,3 +195,8 @@ After students join the organization, you will need to gather them into a **team
 ### Submitting assignments
 - **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to your instructor or TA(s) once a commit has been pushed to the repository.
 	- Thus, remember to save your work by creating and pushing commits often. Make sure to use a descriptive message.
+
+### Supplementary Resources
+- https://www.youtube.com/watch?v=jXpT8eOzzCM
+- https://www.youtube.com/watch?v=ObaFRGp_Eko
+- https://github.com/jfiksel/github-classroom-for-students
