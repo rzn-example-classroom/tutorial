@@ -229,16 +229,22 @@ After students join the organization, you will need to gather them into a **team
 - It is recommended to create a GitHub account using your university email or a professional email incorporating your name.
 	- You can also use an existing account, but this may make it more difficult for instructors to identify you.
 
-### Joining your classroom's GitHub Organization
-- Your primary interaction with the class will be through its GitHub Organization.
-	- This is where the course syllabus and/or other pertinent information will be located.
-	- This is also where you can find your copy of the repository for assignments you have accepted.
-
 ### Accepting assignments
 - Your instructor will provide you with a link to each assignment via one of the following mediums:
 	- your class's GitHub Organization
 	- your learning management system (Canvas, Moodle, Google Classroom, etc.)
 	- email
+
+### Joining your classroom's GitHub Organization
+- Your primary interaction with the class will be through its GitHub Organization.
+	- This is where the course syllabus and/or other pertinent information will be located.
+	- This is also where you can find your copy of the repository for assignments you have accepted.
+- When you accept your first assignment, you should automatically receive an email inviting you to join your classroom's GitHub Organization.
+	- Follow these instructions alongside your instructor's direction so that you can access the appropriate class materials.
+
+### Completing assignments
+- To complete assignments from GitHub Classroom you will need to utilize [Git](https://git-scm.com/) and GitHub. 
+- If you are not familiar with these tools, [an introductory course can be found here](https://github.com/rzn-example-classroom/git-and-github-intro). Your instructor may also provide you with materials or an assignment to introduce you to Git and GitHub.
 
 ### Submitting assignments
 - **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to your instructor or TA(s) once a commit has been pushed to the repository.
