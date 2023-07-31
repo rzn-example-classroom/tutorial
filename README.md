@@ -13,7 +13,7 @@ If you do not already have an existing GitHub account, you will first need to [s
 
 ### Creating a GitHub Organization
 #### Note about organizations
-It is strongly recommended to create a separate GitHub Organization for each class and for each semester the class is offered. This makes it far easier to keep track of which assignments belong to which class, and to better manage student assignments, as there will be a repository added to the organization for *each* student for *each* assignment. More importantly, because TAs must be added as an administrator to the organization that they are to assist with, therefore academic issues can arise if the TA is added as an admin to an organization containing a class and assignments they have not yet taken. However, multiple class sections of the same class during the same semester should be grouped together unless you have a good reason not to do so. 
+It is strongly recommended to create a separate GitHub Organization for each class and for each semester the class is offered. This makes it far easier to keep track of which assignments belong to which class, and to better manage student assignments, as there will be a repository added to the organization for *each* student for *each* assignment. More importantly, TAs must be added as an administrator/owner to the organization that they are to assist with; therefore, academic issues can arise if the TA is added as an admin to an organization containing a class and assignments they have not yet taken. However, multiple class sections of the same class during the same semester should be grouped together unless you have a good reason not to do so. 
 
 It is also strongly recommended to first create a "main" or "template" organization holding the latest version of class files and assignments which you can then copy or fork to create a new semester's classroom organization. If you choose to start with a semester-specific organization, skip the "Copying repositories from a 'main' or 'template' organization" section for now.
 
@@ -23,7 +23,8 @@ It is also strongly recommended to first create a "main" or "template" organizat
 	- Alternatively, you can also transform an existing account into an organization if you are not a member of any other organization, but this is generally not recommended unless you created a new account with an email specifically for that organization.
 3. Select the `Free` plan.
 4. Give your organization a unique and appropriate name, and provide a contact email (the email associated with your existing GitHub account will do).
-	- An example name format is: `[university-abbreviation]-[course-id]-20XX`
+	- An example name format is: `[university-abbreviation]-[course-id]-20XX` (or replace `20XX` with `main` or similar)
+		- If your university offers the course more than once per academic year, you may wish to add a semester abbreviation as well (ex. `SP-20XX` for spring, instead of just `20XX`).
 5. You can choose whether to declare the GitHub organization as belonging to either your personal account or a business or institution. 
 	- The choice makes no functional difference, but it does make a legal difference in the form of the Terms of Service agreement used - read carefully if you select the latter option. 
 	- If you are uncertain, choose the personal option - you can [upgrade to the corporate ToS](https://docs.github.com/en/organizations/managing-organization-settings/upgrading-to-the-corporate-terms-of-service) later, but currently there does not appear to be a way to downgrade to standard ToS or change the company name. However, the corporation name is not published anywhere on the organization page unless you manually add it, nor is any confirmation required from the corporate side for that option.
@@ -83,8 +84,9 @@ Once you have created a semester-specific GitHub Organization to house the class
 2. Click the `+ New Classroom` icon in the top right or the boxed plus icon below.
 3. Select the organization you just created (or the appropriate one, if you created multiple). Then click `Create classroom`.
 	- You can also create a new organization from this menu.
+	- Note that the full name of your organization may be cut off. If you have multiple organizations (as recommended) you may want to set a different icon for each to differentiate them when creating classrooms.
 4. Give your classroom a humanized display name.
-	- Suggested format: `[course-id] [full-course-name] 20XX`
+	- Suggested format: `[course-id] [full-course-name] [semester] 20XX`
 
 ### Adding other instructors or TAs to your Classroom
 Immediately after the last step in the previous section, GitHub Classroom will prompt you to add TAs or admins to your newly created classroom. If you skip this panel, a functionally identical menu can be accessed later from the classroom dashboard, under the `TAs and Admins` tab. The steps provided are elaborated upon below.
@@ -229,16 +231,22 @@ After students join the organization, you will need to gather them into a **team
 - It is recommended to create a GitHub account using your university email or a professional email incorporating your name.
 	- You can also use an existing account, but this may make it more difficult for instructors to identify you.
 
-### Joining your classroom's GitHub Organization
-- Your primary interaction with the class will be through its GitHub Organization.
-	- This is where the course syllabus and/or other pertinent information will be located.
-	- This is also where you can find your copy of the repository for assignments you have accepted.
-
 ### Accepting assignments
 - Your instructor will provide you with a link to each assignment via one of the following mediums:
 	- your class's GitHub Organization
 	- your learning management system (Canvas, Moodle, Google Classroom, etc.)
 	- email
+
+### Joining your classroom's GitHub Organization
+- Your primary interaction with the class will be through its GitHub Organization.
+	- This is where the course syllabus and/or other pertinent information will be located.
+	- This is also where you can find your copy of the repository for assignments you have accepted.
+- When you accept your first assignment, you should automatically receive an email inviting you to join your classroom's GitHub Organization.
+	- Follow these instructions alongside your instructor's direction so that you can access the appropriate class materials.
+
+### Completing assignments
+- To complete assignments from GitHub Classroom you will need to utilize [Git](https://git-scm.com/) and GitHub. 
+- If you are not familiar with these tools, [an introductory course can be found here](https://github.com/rzn-example-classroom/git-and-github-intro). Your instructor may also provide you with materials or an assignment to introduce you to Git and GitHub.
 
 ### Submitting assignments
 - **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to your instructor or TA(s) once a commit has been pushed to the repository.
