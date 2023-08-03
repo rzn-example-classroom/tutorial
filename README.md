@@ -169,9 +169,7 @@ You can disable or deactivate an assignment at any time. This will prevent stude
 Note that you can also view assignment status (whether it is enabled/active or disabled/inactive) from the assignment dashboard, as shown in the first image of option 2 above.
 
 #### Deleting assignments
-Assignments can be deleted from their specific dashboard, under the `Edit` dropdown. **Be warned that deleting an assignment will also delete all student repositories for that assignment**. 
-
-It appears that deletion from the main assignment list under the classroom dashboard is currently broken, as clicking "I have read and understand these effects" does nothing, whereas in the assignment dashboard, it proceeds to the deletion confirmation prompt as expected.
+Assignments can be deleted from their specific dashboard, under the `Edit` dropdown. **Be warned that deleting an assignment will also delete all student repositories for that assignment**.
 
 #### Deadline extensions
 Sometimes it is necessary to provide a student with an extension on an assignment. Manual intervention in GitHub Classroom is only necessary if your assignment deadline is set as a *cutoff date*, where the student loses write access after the deadline. To give an extension, simply navigate to the assignment dashboard, click the three dots on the right of the entry of the student in question, and click "Extend deadline" as shown below:
