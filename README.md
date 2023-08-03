@@ -29,6 +29,16 @@ It is also strongly recommended to first create a "main" or "template" organizat
 	- The choice makes no functional difference, but it does make a legal difference in the form of the Terms of Service agreement used - read carefully if you select the latter option. 
 	- If you are uncertain, choose the personal option - you can [upgrade to the corporate ToS](https://docs.github.com/en/organizations/managing-organization-settings/upgrading-to-the-corporate-terms-of-service) later, but currently there does not appear to be a way to downgrade to standard ToS or change the company name. However, the corporation name is not published anywhere on the organization page unless you manually add it, nor is any confirmation required from the corporate side for that option.
 6. For now, you can skip adding members unless you already have the account details of any other instructors or TAs you would like to add. This is covered in more detail in the "Adding other instructors or TAs to your Classroom" section.
+7. **Important:** Assuming you want student assignments to be private (invisible to other students and the wider internet), continue to the next subsection "Changing organization base permissions." Otherwise, skip this subsection.
+
+##### Changing organization base permissions
+To keep students from viewing each others' assignments, you will need to modify the default/base permissions granted by the organization to members. Later, when students accept their first assignment, they will be prompted to join your organization as a member. If they do so, they will by default be granted *read access* to *all* repositories under the organization, including those corresponding to other students' assignments. To resolve this:
+
+1. Navigate to the main organization homepage, then to its `Settings` tab.
+2. Under the `Access` submenu on the left, navigate to `Member privileges`.
+3. The first setting here specifies the base permissions. By default, this is `Read`. **Change this to `No permission`.**
+4. If your organization has existing repositories, GitHub will ask you to confirm the changes. Do so.
+5. You may need to wait or refresh the page for the changes to take effect. At that point, your organization base permissions are properly configured.
 
 ### Creating template repositories
 #### For assignment starter code or a course syllabus
@@ -134,17 +144,23 @@ Once you have imported your full student roster, you should then create an assig
 6. **It is strongly recommended to set repository visibility to private.** This will prevent students from being able to view other students' repositories unless it is a group assignment and they are on the same team.
 7. For most assignments, granting students admin rights to their repository is unnecessary. [More information about admin privileges can be found here](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 8. **It is strongly recommended to provide students with starter code** via a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) from your classroom organization (unless your assignment requires students to build the project from scratch). To do so, follow the instructions on [this page](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository). Once created, you can select the new template repository as the starter code for your assignment. Student repositories will be initialized with a clone of the template repository. This is an easy way to distribute files to all students working on an assignment.
-9. You can optionally add a supported editor such as Visual Studio Code. This adds a button to the README (and assignment confirmation page) that opens VSCode, installs the GitHub Classroom extension, and configures the assignment locally. Students may have to sign into GitHub.
+9. You can optionally add a supported editor such as Visual Studio Code. This adds a button to the `README` (and assignment confirmation page) that opens VSCode, installs the GitHub Classroom extension, and configures the assignment locally. Students may have to sign into GitHub.
 	- Note: I wasn't quite able to get this to work - YMMV.
-10. Finally, you can add automatic grading tests using GitHub Actions, or enable pull requests for feedback if desired. The former option allows far easier grading as GitHub Classroom will tell you if a submission has passed or failed tests, while the latter option allows better feedback options. Feedback could also be provided via an issue raised on the repository.
+10. You can add automatic grading tests using GitHub Actions, which allows far easier grading, as GitHub Classroom will tell you if a submission has passed or failed tests.
+11. **It is strongly recommended** to enable pull requests for feedback. This makes it very easy for instructors or TAs to provide feedback on a repository, as GitHub Classroom provides a direct link to the PR from the assignment dashboard. The PR can also be easily found from the repository (on the student side).
+	- Alternatively, feedback could be provided via an issue raised on the repository, but requires further manual intervention, whereas the PR creation is mostly automatic.
 
-#### Using the example assignment
-GitHub Classroom also provides a starter assignment for Git and GitHub fundamentals - if your students have little to no experience with either, this can be a useful first assignment to get them used to the ecosystem. The steps are a subset of those for creating your own assignment as in the previous subsection, with most of the same primary features. This assignment can be created directly from GitHub Classroom when you have not created any other assignments. Alternatively, it can be forked from `education/github-starter-course` at any time. Simply create an assignment as normal, but search for and use the aforementioned repository as the starter code.
+
+#### Introductory assignments
+It is strongly recommended to introduce students gradually to the Git, GitHub, and GitHub Classroom ecosystem. Thus, it is a good idea to provide a simple introductory assignment related to the class syllabus or Git/GitHub fundamentals. [This introduction to Git and GitHub is recommended](https://github.com/rzn-example-classroom/git-and-github-intro). It is based upon [GitHub Education's official GitHub starter course](https://github.com/education/github-starter-course), but is tailored more specifically towards student use alongside GitHub Classroom, and also focuses more on the differences between Git and GitHub. 
+
+##### Using the example assignment
+The official course is also available as an example assignment in GitHub Classroom if you have not yet created any other assignments. The steps are a subset of those for creating your own assignment as in the previous subsection, with most of the same primary features. If you wish to use this repository as the template code for a subsequent assignment, simply search for `education/github-starter-course` when setting the assignment starter code.
 
 #### Group assignments
 - You can set a name for the set of teams that will be created which will allow you to reuse these groups for multiple assignments or throughout a semester.
 	- You can also optionally set a maximum number of group members and/or teams. 
-- Note that teams are created as part of the organization housing the classroom - so unique names are a good idea if you intend to have different teams for each assignment.
+- Note that teams are created as part of the organization housing the classroom. Thus, **unique names for each team for each assignment are strongly recommended.**
 - **Teams can only be created by a student who is accepting the assignment.** Thus, the easiest way to create a team is to separately assign students to a team with a given name (ex. Team 1), and inform them that the first student to accept the assignment on their team should create the team with the assigned name. Additional team members can then find and join their team by name.
 	- Alternatively, instructors or TAs can create a team by adding themselves to the student roster and accepting the assignment. This can be repeated by removing themselves from the team and re-visiting the assignment link. However, this can be tedious with multiple teams, so it's best to stick with the first method.
 - Instructors and TAs *are* able to add and remove members of existing teams by clicking on the team name link on the page for the assignment, or visiting the "Teams" tab on the organization page.
@@ -152,10 +168,14 @@ GitHub Classroom also provides a starter assignment for Git and GitHub fundament
 		- If a student is added directly this way, the assignment will be automatically accepted for them and they will be informed of their team name and corresponding repository when visiting the assignment link.
 	- Members can be removed by selecting them via the checkboxes, and clicking "Remove from team..." in the dropdown menu labeled `# member(s) selected`.
 		- Regardless of if the student was added manually or joined a team voluntarily, if removed and not added to another team, the student will be forced to pick a new team upon re-visiting the assignment link.
+	- If a student is switched between two persistent teams (for instance, one spanning an entire semester), they will lose access to repositories associated with their previous team, and gain access to all of their new team's repositories, including those from before the student joined their new team.
 - Students will be notified when they are added or removed from a team, regardless of if it was done automatically by GitHub Classroom when they accepted the assignment, or manually by an administrator.
 - Teams created by GitHub Classroom are marked as secret, meaning only administrators and the members of the team can see it.
 	- Students can view their teammates by navigating to the classroom organization page's `Teams` tab. They will only be able to see the teams they are currently on (including those from past assignments if they have not been removed - another good reason to have unique team names per assignment).
 	- Instructors and TAs can view the teams similarly, but can also easily view which users (by username, not roster ID) have joined a team from the assignment page accessible via the classroom dashboard.
+
+#### Mobile Access
+While students can accept assignments on their mobile devices, be warned that the interface may not behave as expected, especially when accepting the first assignment. At that time, students will be asked to select their name or identifier from the roster, but this menu can blank out on some mobile devices. Thus, usage of mobile devices for accepting assignments is not recommended. However, the GitHub app may be useful for both instructors and students to provide, receive, and manage feedback via pull request.
 
 ### Assignment Submissions
 - **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to the instructor or TAs once a commit has been pushed to the repository.
@@ -166,13 +186,15 @@ GitHub Classroom also provides a starter assignment for Git and GitHub fundament
 In the assignment page, the green Download button allows instructors or TAs to download auto-grading results. It also provides a command to download all student repositories using [Classroom CLI](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Instructions on setting up GitHub CLI and Classroom CLI are available at [this link](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Note that per [this discussion thread](https://github.com/orgs/community/discussions/55285), the CLI currently does not support overwriting existing student repositories or downloading new ones when any already exist in a given directory.
 
 ### Allowing students to access private repositories
-Assuming you are creating a syllabus or other document/repository that should be published to the class only but not the entire internet, you will need to do some more work to allow students to view it. If you are not setting assignment visibility to public, be careful not to set the organizational base permission to "Read" as a means of achieving this. That will allow students to view *all* private repositories, which means other students' work *cannot* be hidden from them. 
+Assuming you are restricting visibility of student assignments and other class materials to their respective domains, you may want to create certain private repositories that should be published to the class only but not the entire internet. For instance, a syllabus, assignment or report formatting guidelines, example code, or some common code usable across multiple assignments. Again, assuming you are *not* setting assignment visibility to public, you will need to do some more work to allow students to view these resources. 
 
-The correct way of allowing students to view a specific private repository while also keeping them from viewing *all* private repositories, you must add them to a **team**, which can be given read access to a particular repository.
+Note: be careful not to set the organizational base permission to `Read` as a means of achieving this. As mentioned previously, that will allow students to view *all* private repositories, which means other students' work *cannot* be hidden from them. This setting should be set to `No permission`, so that students can only access repositories either created for them by GitHub Classroom or those which they or a team they are on has been explicitly granted permission by an administrator or owner (i.e. instructor or TA).
+
+The correct way of allowing students to view a specific private repository while also keeping them from viewing *all* private repositories, is to add them to a **team**, which can be given read access to a particular repository. Fortunately, creating a team of all students is only necessary once - it can be reused for subsequent repositories or assignments.
 
 As previously mentioned, by default, when students accept an assignment for the first time, they are invited to the organization. Until they accept the invitation, they are listed as an "outside collaborator" and are given access only to repositories corresponding to assignments they accept. It is more difficult to add this type of member to teams that are not created through GitHub Classroom.
 
-There are two ways of doing this: one is very tedious, while the other is rather hacky, but much quicker. However, the former requires students to join the GitHub organization, while the latter allows them to remain as outside collaborators. However, if you're using private repositories for everything, it should not make any functional difference. 
+There are two ways of doing this: one is very tedious, while the other is rather hacky, but much quicker. The former requires students to join the GitHub organization, while the latter allows them to remain as outside collaborators. However, if you're using private repositories for everything, it should not make any functional difference. 
 
 #### The quick and hacky way
 ##### Make GitHub Classroom and the students do the work for you
@@ -198,8 +220,11 @@ There are two ways of doing this: one is very tedious, while the other is rather
 7. Optional, but recommended: Return to the organization homepage. Navigate to the Teams, then Students, then Settings for the Students team. Change visibility to Visible.
 8. Follow steps 7 through 11 of the next subsection (the alternate method) to add the `Students` team to the `syllabus` repository (the one *you* created to publish to students, *not* `syllabus-students`, the repo GitHub Classroom created for the assignment).
 9. **Finally, provide students with the assignment link created earlier.** They will be forced to join your existing team, since the team limit is set to 1. They also cannot rename the team. Students will now be given access to the `syllabus` repository as they join.
-	- Optionally, instead of creating a separate `syllabus` repository and adding students to it, you can modify the repository created by GitHub Classroom to suit your needs and/or make a template syllabus repository. This may reduce confusion, however, there is the chance that Classroom will change your repository in unexpected ways. Furthermore, deleting the original assignment may also remove the repository generated by Classroom.
-	- If you do not pursue the option above, you can also delete the `syllabus-students` repository after all students have joined the team, to reduce repository clutter.
+
+Ultimately, this is a more distributed method of student team creation, which distributed the work among the students instead of forcing the instructor or TA to do everything.
+
+##### Additional Notes
+Optionally, instead of creating a separate `syllabus` repository and adding students to it, you can make your original syllabus a template repository and use it as starter code for the assignment. Then, you can manually modify the student team permissions to read-only in the repository settings. This may reduce confusion, however, Classroom may change your repository in unexpected ways. It seems that students joining does not reset manually set permissions, but other problems could arise. Furthermore, deleting the assignment **will** remove the repository generated by Classroom. If you do not pursue this option, you can also delete the `syllabus-students` repository after all students have joined the team, to reduce repository clutter.
 
 #### The tedious way
 ##### Creating a team and adding students manually
@@ -236,6 +261,7 @@ After students join the organization, you will need to gather them into a **team
 	- your class's GitHub Organization
 	- your learning management system (Canvas, Moodle, Google Classroom, etc.)
 	- email
+- It is not recommended to accept assignments from your mobile device, since GitHub Classroom's interface is not fully compatible with mobile devices.
 
 ### Joining your classroom's GitHub Organization
 - Your primary interaction with the class will be through its GitHub Organization.
