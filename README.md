@@ -73,7 +73,7 @@ After this, you can use the template repository as starter code for an assignmen
 ### Creating a GitHub Classroom
 Once you have created a GitHub Organization to house a classroom and associated repositories, you can then create the classroom itself. You should also create a classroom in your main organization from which you can "reuse" assignments - that is, copy them and their template code to another organization and classroom.[^1] However, you should not add any students to a classroom in your main organization - only trusted instructors and TAs.
 
-[^1]: Previous versions of this guide recommended against creating a GitHub Classroom in your main organization - this is because I was unaware that the "Reuse assignment" feature in the assignment dashboard was capable of this functionality.
+[^1]: Previous versions of this guide recommended against creating a GitHub Classroom in your main organization - this is because I was unaware that the `Reuse assignment` feature in the assignment dashboard was capable of this functionality.
 
 1. Navigate to [classroom.github.com/classrooms](https://classroom.github.com/classrooms).
 2. Click the `+ New Classroom` icon in the top right or the boxed plus icon below.
