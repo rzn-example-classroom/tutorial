@@ -256,33 +256,4 @@ After students join the organization, you will need to gather them into a **team
 - https://faculty-web.msoe.edu/hasker/resources/github-classroom.html
 
 ## For Students
-### Your GitHub account
-- It is recommended to create a GitHub account using your university email or a professional email incorporating your name.
-	- You can also use an existing account, but this may make it more difficult for instructors to identify you.
-
-### Accepting assignments
-- Your instructor will provide you with a link to each assignment via one of the following mediums:
-	- your class's GitHub Organization
-	- your learning management system (Canvas, Moodle, Google Classroom, etc.)
-	- email
-- It is not recommended to accept assignments from your mobile device, since GitHub Classroom's interface is not fully compatible with mobile devices.
-
-### Joining your classroom's GitHub Organization
-- Your primary interaction with the class will be through its GitHub Organization.
-	- This is where the course syllabus and/or other pertinent information will be located.
-	- This is also where you can find your copy of the repository for assignments you have accepted.
-- When you accept your first assignment, you should automatically receive an email inviting you to join your classroom's GitHub Organization.
-	- Follow these instructions alongside your instructor's direction so that you can access the appropriate class materials.
-
-### Completing assignments
-- To complete assignments from GitHub Classroom you will need to utilize [Git](https://git-scm.com/) and GitHub. 
-- If you are not familiar with these tools, [an introductory course can be found here](https://github.com/rzn-example-classroom/git-and-github-intro). Your instructor may also provide you with materials or an assignment to introduce you to Git and GitHub.
-
-### Submitting assignments
-- **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to your instructor or TA(s) once a commit has been pushed to the repository.
-	- Thus, remember to save your work by creating and pushing commits often. Make sure to use a descriptive message.
-
-### Supplementary Resources
-- https://www.youtube.com/watch?v=jXpT8eOzzCM
-- https://www.youtube.com/watch?v=ObaFRGp_Eko
-- https://github.com/jfiksel/github-classroom-for-students
+[A full guide for students providing an introduction to Git, GitHub, and their use with GitHub Classroom can be found here](https://github.com/rzn-example-classroom/git-and-github-intro). It includes a video on how to accept and complete their first assignment.
