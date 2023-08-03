@@ -59,7 +59,7 @@ For informational repositories like a syllabus, extra steps are required for stu
 #### Marking a repository as a template
 See also [GitHub's documentation on this subject](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
 
-1. If not already on the main page of the repository, navigate there, then proceed to the `Settings` tab.
+1. If not already on the main page of the repository you wish to use as a template, navigate there, then proceed to the `Settings` tab.
 2. You should be on the `General` settings page - if not, navigate there with the sidebar.
 3. Under the repository name field, check the `Template repository` box. 
 	- GitHub will let you know if there are any issues with making the repository a template, but unless you are using Git LFS, it should be fine.
@@ -124,6 +124,7 @@ If you still have the original window open from the classroom creation, it shoul
 	- a page denoting the deadline of the assignment, if you set one (accessible via a button/link at the top of their repository's `README` file).
 - All other interaction is done via the main GitHub webpage through your classroom organization and its repositories.
 - Student assignment repositories are *not* located in their individual GitHub accounts, but in the account of the organization with which the classroom is associated.
+	- However, if you enable *private repository forking* in your semester-specific organization (see the section "Copying repositories from a 'main' or 'template' organization"), students *can* fork their assignment repos to their personal profile to showcase them later. Though, this may not be desirable until after the class concludes.
 
 ### Creating assignments
 Once you have imported your full student roster, you should then create an assignment for your students via the `Assignments` tab of your dashboard. The easiest way for a student to join on their end is by accepting an assignment, where they will be prompted to pick an indentifier (ID or name as declared in the roster). From there, the GitHub account they sign in with to accept the assignment will be linked to the appropriate entry in your classroom roster.
@@ -143,13 +144,14 @@ Once you have imported your full student roster, you should then create an assig
 5. You may also set the assignment as [individual](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/create-an-individual-assignment) (default) or [group](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/create-a-group-assignment). See the subsection below for more details about group assignments, as there are some idiosyncrasies.
 6. **It is strongly recommended to set repository visibility to private.** This will prevent students from being able to view other students' repositories unless it is a group assignment and they are on the same team.
 7. For most assignments, granting students admin rights to their repository is unnecessary. [More information about admin privileges can be found here](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization).
-8. **It is strongly recommended to provide students with starter code** via a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) from your classroom organization (unless your assignment requires students to build the project from scratch). To do so, follow the instructions on [this page](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository). Once created, you can select the new template repository as the starter code for your assignment. Student repositories will be initialized with a clone of the template repository. This is an easy way to distribute files to all students working on an assignment.
+8. **It is strongly recommended to provide students with starter code** via a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) (unless your assignment requires students to build the project from scratch). To do so, see the previous section "Creating template repositories".
+	- Once created, you can select the new template repository as the starter code for your assignment. Student repositories will be initialized with a clone of the template repository. This is an easy way to distribute files to all students working on an assignment.
+	- Note that if the template repository is updated or the starter code is changed by editing the assignment, **student repositories will not be changed retroactively**. However, new student repositories will use the new starter code.
 9. You can optionally add a supported editor such as Visual Studio Code. This adds a button to the `README` (and assignment confirmation page) that opens VSCode, installs the GitHub Classroom extension, and configures the assignment locally. Students may have to sign into GitHub.
-	- Note: I wasn't quite able to get this to work - YMMV.
+	- Note: the aforementioned extension [currently seems to be broken](https://github.com/orgs/community/discussions/47269) as of 2023-08-03. 
 10. You can add automatic grading tests using GitHub Actions, which allows far easier grading, as GitHub Classroom will tell you if a submission has passed or failed tests.
 11. **It is strongly recommended** to enable pull requests for feedback. This makes it very easy for instructors or TAs to provide feedback on a repository, as GitHub Classroom provides a direct link to the PR from the assignment dashboard. The PR can also be easily found from the repository (on the student side).
-	- Alternatively, feedback could be provided via an issue raised on the repository, but requires further manual intervention, whereas the PR creation is mostly automatic.
-
+	- Alternatively, feedback could be provided via an issue raised on the repository, but this requires further manual intervention, whereas PR creation is mostly automatic.
 
 #### Introductory assignments
 It is strongly recommended to introduce students gradually to the Git, GitHub, and GitHub Classroom ecosystem. Thus, it is a good idea to provide a simple introductory assignment related to the class syllabus or Git/GitHub fundamentals. [This introduction to Git and GitHub is recommended](https://github.com/rzn-example-classroom/git-and-github-intro). It is based upon [GitHub Education's official GitHub starter course](https://github.com/education/github-starter-course), but is tailored more specifically towards student use alongside GitHub Classroom, and also focuses more on the differences between Git and GitHub. 
