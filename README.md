@@ -181,7 +181,9 @@ While students can accept assignments on their mobile devices, be warned that th
 
 ### Assignment Submissions
 - **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to the instructor or TAs once a commit has been pushed to the repository.
-	- Thus, instructors and TAs should be careful to avoid prematurely grading a student's work. Waiting until the deadline has passed is the best way to do so. Otherwise, ask students to specify in their last commit that this is the final version, but this is not recommended.
+	- Thus, instructors and TAs should be careful to avoid prematurely grading a student's work. Waiting until the deadline has passed is the best way to do so. 
+	- Alternatively, you can ask students to specify in their last commit that this is the final version of their assignment.
+		- This may be useful especially in cases where no assignment deadline is set.
 	- Note that the commit does not have to be from the owner of the repository - any admin or member with access to the student's repository (which should only be the student, unless it is a group project) can push a commit and "submit" the assignment.
 
 ### Grading Assignments
