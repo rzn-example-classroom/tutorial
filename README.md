@@ -3,19 +3,21 @@
 ### Why use GitHub Classroom?
 GitHub is an industry standard platform for repository management, and Git is likewise the standard in version control. Introducing students to Git and GitHub as soon as possible will allow them to better track their own projects, work more effectively on group programming projects associated with classes, and better prepare them for software development in industry. 
 
-From an instructor perspective, GitHub classroom makes distributing, monitoring, collecting, and grading programming assignments much easier. By creating a template repository for an assignment, you can create a link that will allow each student to clone this repository, work on a private version of it, and turn it in when complete. Depending on the assignment, testing and grading can even be partially or fully automated. Furthermore, applying for education benefits allows students to use GitHub Codespaces (which provides online development environments for assignments). Overall, leveraging an environment designed for code makes managing computer science or engineering assignments far smoother.
+From an instructor perspective, GitHub Classroom makes distributing, monitoring, collecting, and grading programming assignments much easier. By creating a template repository for an assignment, you can create a link that will allow each student to clone this repository, work on a private version of it, and turn it in when complete. Depending on the assignment, testing and grading can even be partially or fully automated. Furthermore, applying for education benefits allows students to use GitHub Codespaces (which provides online development environments for assignments). Overall, leveraging an environment designed for code makes managing computer science or engineering assignments far smoother.
 
 ### Note about these instructions
-The student instructions are designed to correspond directly to the results of the these instructions. If you change something here, you may need to update the information you provide your students.
+The [student guide](https://github.com/rzn-example-classroom/git-and-github-intro) is designed to correspond directly to the results of the these instructions. If you change something here, you may need to update the information you provide your students.
 
 ### Your GitHub Account
-If you do not already have an existing GitHub account, you will first need to [sign up](https://github.com/signup) for one. Even if you have an existing professional account, if you intend to use GitHub classroom for more than one class or for more than one semester, you may want to create a new account since having a separate organization is strongly recommended for each class and for each semester each class is offered. If you have existing organizations, your account may become crowded.
+If you do not already have an existing GitHub account, you will first need to [sign up](https://github.com/signup) for one. Even if you have an existing professional account, if you intend to use GitHub classroom for more than one class or for more than one semester, you may want to create a new account, since your account may become crowded over time if you have existing organizations.
 
 ### Creating a GitHub Organization
 #### Note about organizations
-It is strongly recommended to create a separate GitHub Organization for each class and for each semester the class is offered. This makes it far easier to keep track of which assignments belong to which class, and to better manage student assignments, as there will be a repository added to the organization for *each* student for *each* assignment. More importantly, TAs must be added as an administrator/owner to the organization that they are to assist with; therefore, academic issues can arise if the TA is added as an admin to an organization containing a class and assignments they have not yet taken. However, multiple class sections of the same class during the same semester should be grouped together unless you have a good reason not to do so. 
+It is strongly recommended to create a separate GitHub Organization for each class and for each semester the class is offered. This makes it far easier to keep track of which assignments belong to which class, and to better manage student assignments, as there will be a repository added to the organization for *each* student for *each* assignment. 
 
-It is also strongly recommended to first create a "main" or "template" organization holding the latest version of class files and assignments which you can then copy or fork to create a new semester's classroom organization. If you choose to start with a semester-specific organization, skip the "Copying repositories from a 'main' or 'template' organization" section for now.
+More importantly, TAs must be added as an administrator/owner to the organization that they are to assist with; therefore, academic integrity issues can arise if the TA is added as an admin to an organization containing a class and assignments they have not yet taken. However, multiple class sections of the same class during the same semester should be grouped together unless you have a good reason not to do so. This has the added benefit of allowing cross-collaboration between class sections on group assignments.
+
+It is also strongly recommended to first create a "main" or "template" organization holding the latest version of class files and assignments which you can then fork or "reuse" to create a new semester's organization and Classroom. 
 
 #### Steps
 1. Go to [github.com/settings/organizations](https://github.com/settings/organizations).
@@ -46,7 +48,7 @@ You may want to create a repository in the GitHub Organization associated with y
 
 You may not want to create template repositories until you have created a Classroom (and associated semester-specific organization). In that case, return to this section after the "Adding students to your Classroom" section.
 
-For informational repositories like a syllabus, extra steps are required for students to view it. This isn't necessary in your "main" repository, because there shouldn't be any students there, but will be required for semester-specific repositories with an associated classroom. However, these steps require an existing classroom, so visit the "Allowing students to access private repositories" section after you've created the prerequisite semester-specific organization and classroom.
+For informational repositories like a syllabus, extra steps are required for students to view it. This isn't necessary in your "main" repository, because there shouldn't be any students there, but will be required for semester-specific repositories. However, these steps require an existing classroom, so visit the "Allowing students to access private repositories" section after you've created the prerequisite semester-specific organization and classroom.
 
 #### Basic repository creation
 1. Navigate to your organization's main page, and to the `Repositories` tab.
@@ -68,27 +70,10 @@ After this, you can use the template repository as starter code for an assignmen
 
 > All starter code must use a [template repository.](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-template-repository) Your starter code repository must be either in the same organization as this classroom or a public repository if elsewhere. Learn about [transferring your repositories.](https://docs.github.com/en/rest/reference/repos#transfer-a-repository)
 
-### Copying repositories from a 'main' or 'template' organization
-While repositories can be marked as a template, entire organizations cannot be. Thus, if using a separate "main" organization to host the primary working version of (private) classroom materials as suggested previously, you must enable forking of private repositories so you can copy them to each individual classroom organization.
-
-1. Follow the steps from "Creating a GitHub Organization" to create a new GitHub Organization for the next semester you plan to offer the course. This will be your "destination" organization, while your existing organization will be the source.
-	- Alternatively, if you started with a semester-specific organization, instead create a new organization for the working copy of your class files.
-2. In the source organization (the one you wish to copy repos from), navigate to the `Settings` tab.
-3. Under the `Access` submenu on the left, navigate to `Member privileges`.
-4. Scroll down to `Repository forking`. Check the box to allow forking private repositories, then `Save`.
-5. If the destination organization is your "main" organization, repeat steps 2-4 for it as well. This will be necessary when you want to copy repositories from it for future semesters.
-6. Now, you'll copy the repositories from the source organization to the destination organization. For each repository you wish to copy, you will need to repeat the following steps (7-10).
-7. Navigate to the main page of a (template) repository in the source organization.
-8. Create a new fork in the top right. This will take you to a new page where you can select a name (by default, the same as the original repository). 
-	- If the upstream repo has any branches other than `main`, make sure to uncheck the box on the bottom if you want them to be copied.
-9. **Change the `Owner` of the new fork to the destination organization**. By default, GitHub will fork the repo to your personal account. Click the name/dropdown to change this, and select the appropriate organization. 
-	- Be careful when selecting the organization if you change the repository name. You can clone to the same organization if you do so (which may be desirable, but not in this case).
-10. Wait for the fork to complete. The page should load automatically - if not, refresh.
-
-Once you've completed steps 7-10 for each repository you wish to copy, you can proceed with setting up the GitHub Classroom. This will be necessary for each semester's GitHub organization. This is why a main organization is helpful - otherwise, you would need to copy from the last semester's organization, which might prove difficult once student repositories have been created.
-
 ### Creating a GitHub Classroom
-Once you have created a semester-specific GitHub Organization to house the classroom and associated repositories, you can then create the classroom itself. Note that you shouldn't create a classroom for your main organization - it won't be useful since there shouldn't be any students.
+Once you have created a GitHub Organization to house a classroom and associated repositories, you can then create the classroom itself. You should also create a classroom in your main organization from which you can "reuse" assignments - that is, copy them and their template code to another organization and classroom.[^1] However, you should not add any students to a classroom in your main organization - only trusted instructors and TAs.
+
+[^1]: Previous versions of this guide recommended against creating a GitHub Classroom in your main organization - this is because I was unaware that the "Reuse assignment" feature in the assignment dashboard was capable of this functionality.
 
 1. Navigate to [classroom.github.com/classrooms](https://classroom.github.com/classrooms).
 2. Click the `+ New Classroom` icon in the top right or the boxed plus icon below.
@@ -124,10 +109,12 @@ If you still have the original window open from the classroom creation, it shoul
 	- a page denoting the deadline of the assignment, if you set one (accessible via a button/link at the top of their repository's `README` file).
 - All other interaction is done via the main GitHub webpage through your classroom organization and its repositories.
 - Student assignment repositories are *not* located in their individual GitHub accounts, but in the account of the organization with which the classroom is associated.
-	- However, if you enable *private repository forking* in your semester-specific organization (see the section "Copying repositories from a 'main' or 'template' organization"), students *can* fork their assignment repos to their personal profile to showcase them later. Though, this may not be desirable until after the class concludes.
+	- However, if you enable *private repository forking* in your semester-specific organization (see the subsection "Forking private repositories" of "Copying, templating, and 'reusing' assignments"), students *can* fork their assignment repos to their personal profile to showcase them later. Though, this may not be desirable until after the class concludes.
 
 ### Creating assignments
-Once you have imported your full student roster, you should then create an assignment for your students via the `Assignments` tab of your dashboard. The easiest way for a student to join on their end is by accepting an assignment, where they will be prompted to pick an indentifier (ID or name as declared in the roster). From there, the GitHub account they sign in with to accept the assignment will be linked to the appropriate entry in your classroom roster.
+Once you have imported your full student roster, you should then create an assignment for your students via the `Assignments` tab of your dashboard. If you are currently working on your "main" organization, you can ignore mention of students in this section for now, and focus on creating the assignments that you'll later copy to the semester-specific organization and classroom (see "Copying, templating, and 'reusing' assignments").
+
+The easiest way for a student to join on their end is by accepting an assignment, where they will be prompted to pick an identifier (ID or name as declared in the roster). From there, the GitHub account they sign in with to accept the assignment will be linked to the appropriate entry in your classroom roster.
 
 ![GitHub Classroom Guide Fig3](https://github.com/rzn-example-classroom/.github/assets/16062019/f4294ff7-f853-4df3-9b96-c1b4ba2b8f57)
 
@@ -153,11 +140,7 @@ Once you have imported your full student roster, you should then create an assig
 11. **It is strongly recommended** to enable pull requests for feedback. This makes it very easy for instructors or TAs to provide feedback on a repository, as GitHub Classroom provides a direct link to the PR from the assignment dashboard. The PR can also be easily found from the repository (on the student side).
 	- Alternatively, feedback could be provided via an issue raised on the repository, but this requires further manual intervention, whereas PR creation is mostly automatic.
 
-#### Introductory assignments
-It is strongly recommended to introduce students gradually to the Git, GitHub, and GitHub Classroom ecosystem. Thus, it is a good idea to provide a simple introductory assignment related to the class syllabus or Git/GitHub fundamentals. [This introduction to Git and GitHub is recommended](https://github.com/rzn-example-classroom/git-and-github-intro). It is based upon [GitHub Education's official GitHub starter course](https://github.com/education/github-starter-course), but is tailored more specifically towards student use alongside GitHub Classroom, and also focuses more on the differences between Git and GitHub. 
-
-##### Using the example assignment
-The official course is also available as an example assignment in GitHub Classroom if you have not yet created any other assignments. The steps are a subset of those for creating your own assignment as in the previous subsection, with most of the same primary features. If you wish to use this repository as the template code for a subsequent assignment, simply search for `education/github-starter-course` when setting the assignment starter code.
+Once you have created the assignment, you should be prompted to share the invitation link with students. This is required for them to accept and access the assignment. It is recommended to distribute this through your LMS, if applicable. 
 
 #### Group assignments
 - You can set a name for the set of teams that will be created which will allow you to reuse these groups for multiple assignments or throughout a semester.
@@ -176,6 +159,30 @@ The official course is also available as an example assignment in GitHub Classro
 	- Students can view their teammates by navigating to the classroom organization page's `Teams` tab. They will only be able to see the teams they are currently on (including those from past assignments if they have not been removed - another good reason to have unique team names per assignment).
 	- Instructors and TAs can view the teams similarly, but can also easily view which users (by username, not roster ID) have joined a team from the assignment page accessible via the classroom dashboard.
 
+### More on assignments
+#### Disabling assignments
+You can disable or deactivate an assignment at any time. This will prevent students from accepting or accessing the assignment. If you wish to prepare an assignment ahead of time, doing this directly after assignment creation is wise. There are two ways to enable or disable an assignment:
+
+1. From the assignment list in your classroom dashboard, via the "Enable assignment invitation URL" checkbox: ![Disabling Assignments 1](https://github.com/rzn-example-classroom/tutorial/assets/16062019/02b33aaf-8473-4b89-8b8c-1a6befc6da3f)
+2. From the assignment-specific dashboard by editing the assignment and setting it to "Active" or "Inactive" (respectively) in the dropdown: ![Disabling Assignments 2](https://github.com/rzn-example-classroom/tutorial/assets/16062019/5bb8390c-8533-4dc9-9f86-f9da031cef26) ![Disabling Assignments 3](https://github.com/rzn-example-classroom/tutorial/assets/16062019/ff11ffef-59f0-4c00-8cb2-b7a4cfbfb477)
+
+Note that you can also view assignment status (whether it is enabled/active or disabled/inactive) from the assignment dashboard, as shown in the first image of option 2 above.
+
+#### Deadline extensions
+Sometimes it is necessary to provide a student with an extension on an assignment. Manual intervention in GitHub Classroom is only necessary if your assignment deadline is set as a *cutoff date*, where the student loses write access after the deadline. To give an extension, simply navigate to the assignment dashboard, click the three dots on the right of the entry of the student in question, and click "Extend deadline" as shown below:
+
+![Disabling Assignments 3](https://github.com/rzn-example-classroom/tutorial/assets/16062019/ff11ffef-59f0-4c00-8cb2-b7a4cfbfb477)
+
+Note that deadline extensions currently *cannot be set with a timeframe*. Once extended, the student will have write access to the repository until you revoke the extension. However, since commits are timestamped, if a student makes a commit after the extended deadline, you can manually revert the commit and grade the work as it was at the time of the deadline. Because of this, you can also evaluate late assignments without the deadline set as a cutoff date.
+
+#### Introductory assignments
+It is strongly recommended to introduce students gradually to the Git, GitHub, and GitHub Classroom ecosystem. Thus, it is a good idea to provide a simple introductory assignment related to the class syllabus or Git/GitHub fundamentals. [This introduction to Git and GitHub is strongly recommended](https://github.com/rzn-example-classroom/git-and-github-intro).[^2] It is based upon [GitHub Education's official GitHub starter course](https://github.com/education/github-starter-course), but is tailored more specifically towards student use alongside GitHub Classroom, and also focuses more on the differences between Git and GitHub. 
+
+[^2]: Disclaimer: I made this guide, but it is tailored specifically for students getting started with GitHub Classroom, and in my opinion is better suited to that task.
+
+##### Using the example assignment
+The official course is also available as an example assignment in GitHub Classroom if you have not yet created any other assignments. The steps are a subset of those for creating your own assignment as in the previous subsection, with most of the same primary features. If you wish to use this repository as the template code for a subsequent assignment, simply search for `education/github-starter-course` when setting the assignment starter code.
+
 #### Mobile Access
 While students can accept assignments on their mobile devices, be warned that the interface may not behave as expected, especially when accepting the first assignment. At that time, students will be asked to select their name or identifier from the roster, but this menu can blank out on some mobile devices. Thus, usage of mobile devices for accepting assignments is not recommended. However, the GitHub app may be useful for both instructors and students to provide, receive, and manage feedback via pull request.
 
@@ -187,7 +194,40 @@ While students can accept assignments on their mobile devices, be warned that th
 	- Note that the commit does not have to be from the owner of the repository - any admin or member with access to the student's repository (which should only be the student, unless it is a group project) can push a commit and "submit" the assignment.
 
 ### Grading Assignments
-In the assignment page, the green Download button allows instructors or TAs to download auto-grading results. It also provides a command to download all student repositories using [Classroom CLI](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Instructions on setting up GitHub CLI and Classroom CLI are available at [this link](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Note that per [this discussion thread](https://github.com/orgs/community/discussions/55285), the CLI currently does not support overwriting existing student repositories or downloading new ones when any already exist in a given directory.
+In the assignment page, the green Download button allows instructors or TAs to download auto-grading results. It also provides a command to download all student repositories using [Classroom CLI](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Instructions on setting up GitHub CLI and Classroom CLI are available at [this link](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). 
+
+Note that per [this discussion thread](https://github.com/orgs/community/discussions/55285), the CLI currently does not support overwriting existing student repositories or downloading new ones when any already exist in a given directory. Thus, it is recommended to wait until after the deadline before downloading repositories.
+
+### Copying, templating, and 'reusing' assignments
+While individual repositories can be marked as a template, entire organizations or classrooms cannot be. However, a feature in GitHub Classroom makes this problem easier to solve. By creating a Classroom in your main organization, you can create the primary working version of your assignments there, and copy them to other organizations and classrooms using the "Reuse assignment" feature. 
+
+At this point, you need at least two organizations: a source (likely your main organization) and a destination (your semester-specific organization). If you need to create another organization, return to the "Creating a GitHub Organization" section for instructions. Once you've created your assignments in the source organization, for each one, do the following:
+
+1. Navigate to the assignment-specific dashboard (from the classroom assignment list).
+2. In the top right, click `Edit`, then `Reuse assignment`. ![Reuse assignment 1](https://github.com/rzn-example-classroom/tutorial/assets/16062019/ef9fcbb8-453f-4fca-8f93-835426125d8c)
+3. You will then be prompted to choose an organization and classroom to copy to. You cannot copy the assignment to the source classroom. 
+	- You can copy it to another classroom in the same organization, but you shouldn't have more than one classroom in the same organization anyways. ![Reuse assignment 2](https://github.com/rzn-example-classroom/tutorial/assets/16062019/d7bc3445-72a8-4b2c-82d3-1d925e786bf9)
+4. You will be taken to the destination classroom and assignment dashboard. It may take some time for the assignment and template repository to be copied, and you will likely need to refresh the page to see updates. 
+
+#### Forking private repositories
+While the `Reuse assignment` feature of GitHub Classroom bypasses this requirement, other (template) repositories that are not associated with an assignment must be copied manually.
+
+1. Ensure you have a source and destination organization. 
+2. In the source organization (the one you wish to copy repos from), navigate to the `Settings` tab.
+3. Under the `Access` submenu on the left, navigate to `Member privileges`.
+4. Scroll down to `Repository forking`. Check the box to allow forking private repositories, then `Save`.
+5. If the destination organization is your "main" organization, repeat steps 2-4 for it as well. This will be necessary when you want to copy repositories from it for future semesters.
+6. Now, you'll copy the repositories from the source organization to the destination organization. For each repository you wish to copy, you will need to repeat the following steps (7-10).
+7. Navigate to the main page of a (template) repository in the source organization.
+8. Create a new fork in the top right. This will take you to a new page where you can select a name (by default, the same as the original repository). 
+	- If the upstream repo has any branches other than `main`, make sure to uncheck the box on the bottom if you want them to be copied.
+9. **Change the `Owner` of the new fork to the destination organization**. By default, GitHub will fork the repo to your personal account. Click the name/dropdown to change this, and select the appropriate organization. 
+	- Be careful when selecting the organization if you change the repository name. You can clone to the same organization if you do so (which may be desirable, but not in this case).
+10. Wait for the fork to complete. The page should load automatically - if not, refresh.
+
+Repeat steps 7-10 for each repository you wish to copy. Note that assignment template repositories can also be copied manually this way, but this is not recommended.[^3]
+
+[^3]: Previous versions of this guide used this method to copy repositories from the main organization, but the `Reuse assignment` feature makes it much easier to do so. Thus, this is no longer recommended for template repositories associated with an assignment.
 
 ### Allowing students to access private repositories
 Assuming you are restricting visibility of student assignments and other class materials to their respective domains, you may want to create certain private repositories that should be published to the class only but not the entire internet. For instance, a syllabus, assignment or report formatting guidelines, example code, or some common code usable across multiple assignments. Again, assuming you are *not* setting assignment visibility to public, you will need to do some more work to allow students to view these resources. 
