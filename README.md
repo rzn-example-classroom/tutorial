@@ -130,7 +130,7 @@ The easiest way for a student to join on their end is by accepting an assignment
 	- You can also set the deadline as a cutoff date, in which case the student will no longer be able to edit the repository after the due date. For most assignments, this is desirable.
 5. You may also set the assignment as [individual](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/create-an-individual-assignment) (default) or [group](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/create-a-group-assignment). See the subsection below for more details about group assignments, as there are some idiosyncrasies.
 6. **It is strongly recommended to set repository visibility to private.** This will prevent students from being able to view other students' repositories unless it is a group assignment and they are on the same team.
-7. For most assignments, granting students admin rights to their repository is unnecessary. [More information about admin privileges can be found here](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization).
+7. For most assignments, granting students admin rights to their repository is unnecessary. By default, repository administrators can change visibility of, transfer, or delete the repository, but these privileges can be disabled in the Organization Settings page under Member Privileges. [More information about admin privileges can be found here](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 8. **It is strongly recommended to provide students with starter code** via a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) (unless your assignment requires students to build the project from scratch). To do so, see the previous section "Creating template repositories".
 	- Once created, you can select the new template repository as the starter code for your assignment. Student repositories will be initialized with a clone of the template repository. This is an easy way to distribute files to all students working on an assignment.
 	- Note that if the template repository is updated or the starter code is changed by editing the assignment, **student repositories will not be changed retroactively**. However, new student repositories will use the new starter code.
@@ -139,6 +139,7 @@ The easiest way for a student to join on their end is by accepting an assignment
 10. You can add automatic grading tests using GitHub Actions, which allows far easier grading, as GitHub Classroom will tell you if a submission has passed or failed tests.
 11. **It is strongly recommended** to enable pull requests for feedback. This makes it very easy for instructors or TAs to provide feedback on a repository, as GitHub Classroom provides a direct link to the PR from the assignment dashboard. The PR can also be easily found from the repository (on the student side).
 	- Alternatively, feedback could be provided via an issue raised on the repository, but this requires further manual intervention, whereas PR creation is mostly automatic.
+	- Note that by default, you will be automatically subscribed to all changes in repositories you have push access to, which will be all student repositories. See "Managing feedback pull request notifications" for more details.
 
 Once you have created the assignment, you should be prompted to share the invitation link with students. This is required for them to accept and access the assignment. It is recommended to distribute this through your LMS, if applicable. 
 
@@ -192,7 +193,24 @@ It is strongly recommended to introduce students gradually to the Git, GitHub, a
 The official course is also available as an example assignment in GitHub Classroom if you have not yet created any other assignments. The steps are a subset of those for creating your own assignment as in the previous subsection, with most of the same primary features. If you wish to use this repository as the template code for a subsequent assignment, simply search for `education/github-starter-course` when setting the assignment starter code.
 
 #### Mobile Access
-While students can accept assignments on their mobile devices, be warned that the interface may not behave as expected, especially when accepting the first assignment. At that time, students will be asked to select their name or identifier from the roster, but this menu can blank out on some mobile devices. Thus, usage of mobile devices for accepting assignments is not recommended. However, the GitHub app may be useful for both instructors and students to provide, receive, and manage feedback via pull request.
+While students can accept assignments on their mobile devices, be warned that the interface may not behave as expected, especially when accepting the first assignment. At that time, students will be asked to select their name or identifier from the roster, but this menu can blank out on some mobile devices. Thus, usage of mobile devices for accepting assignments is not recommended. However, the GitHub app is quite useful for both instructors and students to provide, receive, and manage feedback via pull request. Note that LaTeX formatting does not currently work on mobile, but Markdown codeblocks do.
+
+#### Managing feedback pull request notifications
+The default notification settings for a GitHub account automatically subscribe you to any repository you have push access to. Assuming you are an administrator of your classroom organization, this will likely result in you (and any other admin) receiving an email each time a student repository is created or committed to. Obviously this can quickly become a severe annoyance. Thus, it is recommended to disable the "Automatically watch repositories" option in your account's Notifications settings: 
+
+![[GitHub Disabling Watch Notifications.png]]
+
+To unwatch repositories that may have been watched before you disabled this setting, scroll down slightly and click "View watched repositories" as shown below.
+
+![[GitHub Disabling Watch Notifications 2.png]]
+
+Then, once you click "Unwatch all" you can select an *owner* (including an organization) to unwatch repositories from. By selecting the organization associated with your classroom, you can unsubscribe from any student repositories you may be subscribed to. This will prevent you from receiving an email for every change made in each student repository.
+
+![[GitHub Disabling Watch Notifications 3.png]]
+
+While messages for every change are excessive and unnecessary, your students should still be able to attract your attention. The best way for them to do this is by *mentioning* you in the feedback pull request. This is accessible from the student repository's `Pull requests` tab. There, a student can make a comment mentioning your username (ex. `@RyzenFromFire`). 
+
+To learn more about managing notifications, visit [GitHub's documentation here](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications). The email notifications are easily filterable via various header data. See the documentation for more details.
 
 ### Assignment Submissions
 - **There is no "submit button" in GitHub Classroom.** Assignments will appear as "submitted" to the instructor or TAs once a commit has been pushed to the repository.
@@ -202,9 +220,54 @@ While students can accept assignments on their mobile devices, be warned that th
 	- Note that the commit does not have to be from the owner of the repository - any admin or member with access to the student's repository (which should only be the student, unless it is a group project) can push a commit and "submit" the assignment.
 
 ### Grading Assignments
-In the assignment page, the green Download button allows instructors or TAs to download auto-grading results. It also provides a command to download all student repositories using [Classroom CLI](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Instructions on setting up GitHub CLI and Classroom CLI are available at [this link](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). 
+In the assignment page, the green Download button allows instructors or TAs to download auto-grading results. It also provides a command to download all student repositories using [Classroom CLI](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). Instructions on setting up GitHub CLI and Classroom CLI are in the subsection below.
 
-Note that per [this discussion thread](https://github.com/orgs/community/discussions/55285), the CLI currently does not support overwriting existing student repositories or downloading new ones when any already exist in a given directory. Thus, it is recommended to wait until after the deadline before downloading repositories.
+Note that per [this discussion thread](https://github.com/orgs/community/discussions/55285), the CLI currently does not support overwriting existing student repositories or downloading new ones when any already exist in a given directory. You can update repositories individually, as they are fully functional, but this can quickly become tedious. Thus, it is recommended to wait until after the deadline before downloading repositories. Manual updating may be reserved for cases of deadline extension or similar.
+
+#### Setting up GitHub Classroom CLI
+First, install the GitHub CLI with the appropriate command for your OS. Some examples are given below, but [the full array of options is available here](https://github.com/cli/cli#installation).
+
+```shell
+# Windows
+winget install --id GitHub.cli
+
+# MacOS
+brew install gh
+```
+
+Linux instructions vary by distribution, and there are multiple methods both officially and unofficially supported, [available here](https://github.com/cli/cli/blob/trunk/docs/install_linux.md). 
+
+Once installed, restart the shell. Then, run `gh auth login`. The example below is for Windows, but will be similar for other platforms.
+
+```
+C:\Users\user\Desktop\Code\Projects\GHClassroom>gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: XXXX-XXXX
+Press Enter to open github.com in your browser...
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as User
+```
+
+Then, install the GitHub Classroom extension to the GitHub CLI using `gh extension install github/gh-classroom`:
+
+```
+C:\Users\User\Desktop\Code\Projects\GHClassroom>gh extension install github/gh-classroom
+✓ Installed extension github/gh-classroom
+```
+
+Finally, your assignment dashboard will provide a command you can paste into your terminal of choice to clone all student assignment repositories to your working directory (be sure to `cd` to a suitable directory first):
+
+![[GitHub Classroom DL Student Repos Command.png]]
+
+After the download completes, a folder with a name corresponding to the assignment will be created containing all student repositories, which you can then grade.
+
+Further instructions available [here](https://github.com/cli/cli#installation) and [here](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/using-github-classroom-with-github-cli). 
 
 ### Copying, templating, and 'reusing' assignments
 While individual repositories can be marked as a template, entire organizations or classrooms cannot be. However, a feature in GitHub Classroom makes this problem easier to solve. By creating a Classroom in your main organization, you can create the primary working version of your assignments there, and copy them to other organizations and classrooms using the "Reuse assignment" feature. 
@@ -273,10 +336,10 @@ There are two ways of doing this: one is very tedious, while the other is rather
 8. Follow steps 7 through 11 of the next subsection (the alternate method) to add the `Students` team to the `syllabus` repository (the one *you* created to publish to students, *not* `syllabus-students`, the repo GitHub Classroom created for the assignment).
 9. **Finally, provide students with the assignment link created earlier.** They will be forced to join your existing team, since the team limit is set to 1. They also cannot rename the team. Students will now be given access to the `syllabus` repository as they join.
 
-Ultimately, this is a more distributed method of student team creation, which distributed the work among the students instead of forcing the instructor or TA to do everything.
+Ultimately, this is a more distributed method of student team creation, which distributes the work among the students instead of forcing the instructor or TA to do everything.
 
 ##### Additional Notes
-Optionally, instead of creating a separate `syllabus` repository and adding students to it, you can make your original syllabus a template repository and use it as starter code for the assignment. Then, you can manually modify the student team permissions to read-only in the repository settings. This may reduce confusion, however, Classroom may change your repository in unexpected ways. It seems that students joining does not reset manually set permissions, but other problems could arise. Furthermore, deleting the assignment **will** remove the repository generated by Classroom. If you do not pursue this option, you can also delete the `syllabus-students` repository after all students have joined the team, to reduce repository clutter.
+Optionally, instead of creating a separate `syllabus` repository and adding students to it, you can make your original syllabus a template repository and use it as starter code for the assignment. Then, you can manually modify the student team permissions to read-only in the repository settings. This may reduce confusion, however, Classroom may change your repository in unexpected ways. It seems that students joining does not reset permissions, but other problems could arise. Furthermore, deleting the assignment **will** remove the repository generated by Classroom. If you do not pursue this option, you can also delete the `syllabus-students` repository after all students have joined the team, to reduce repository clutter.
 
 #### The tedious way
 ##### Creating a team and adding students manually
