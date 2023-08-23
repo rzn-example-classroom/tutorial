@@ -198,15 +198,18 @@ While students can accept assignments on their mobile devices, be warned that th
 #### Managing feedback pull request notifications
 The default notification settings for a GitHub account automatically subscribe you to any repository you have push access to. Assuming you are an administrator of your classroom organization, this will likely result in you (and any other admin) receiving an email each time a student repository is created or committed to. Obviously this can quickly become a severe annoyance. Thus, it is recommended to disable the "Automatically watch repositories" option in your account's Notifications settings: 
 
-![[GitHub Disabling Watch Notifications.png]]
+![GitHub Disabling Watch Notifications](https://github.com/rzn-example-classroom/tutorial/assets/16062019/cc0c58be-4897-4f92-9efd-a8b0dff5d497)
+
 
 To unwatch repositories that may have been watched before you disabled this setting, scroll down slightly and click "View watched repositories" as shown below.
 
-![[GitHub Disabling Watch Notifications 2.png]]
+![GitHub Disabling Watch Notifications 2](https://github.com/rzn-example-classroom/tutorial/assets/16062019/e3feeddc-595d-4d17-9391-5364e5b0317f)
+
 
 Then, once you click "Unwatch all" you can select an *owner* (including an organization) to unwatch repositories from. By selecting the organization associated with your classroom, you can unsubscribe from any student repositories you may be subscribed to. This will prevent you from receiving an email for every change made in each student repository.
 
-![[GitHub Disabling Watch Notifications 3.png]]
+![GitHub Disabling Watch Notifications 3](https://github.com/rzn-example-classroom/tutorial/assets/16062019/354dc301-6f08-4b5e-a686-f252eb8ed01a)
+
 
 While messages for every change are excessive and unnecessary, your students should still be able to attract your attention. The best way for them to do this is by *mentioning* you in the feedback pull request. This is accessible from the student repository's `Pull requests` tab. There, a student can make a comment mentioning your username (ex. `@RyzenFromFire`). 
 
@@ -277,7 +280,9 @@ At this point, you need at least two organizations: a source (likely your main o
 1. Navigate to the assignment-specific dashboard (from the classroom assignment list).
 2. In the top right, click `Edit`, then `Reuse assignment`. ![Reuse assignment 1](https://github.com/rzn-example-classroom/tutorial/assets/16062019/ef9fcbb8-453f-4fca-8f93-835426125d8c)
 3. You will then be prompted to choose an organization and classroom to copy to. You cannot copy the assignment to the source classroom. 
-	- You can copy it to another classroom in the same organization, but you shouldn't have more than one classroom in the same organization anyways. ![Reuse assignment 2](https://github.com/rzn-example-classroom/tutorial/assets/16062019/d7bc3445-72a8-4b2c-82d3-1d925e786bf9)
+	- You can copy it to another classroom in the same organization, but you shouldn't have more than one classroom in the same organization anyways. 
+		
+		![Reuse assignment 2](https://github.com/rzn-example-classroom/tutorial/assets/16062019/d7bc3445-72a8-4b2c-82d3-1d925e786bf9)
 4. You will be taken to the destination classroom and assignment dashboard. It may take some time for the assignment and template repository to be copied, and you will likely need to refresh the page to see updates. 
 
 #### Forking private repositories
